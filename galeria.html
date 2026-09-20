@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra galería ❤️</title>
+
+    <link rel="stylesheet" href="galeria.css">
+</head>
+
+<body>
+
+    <div class="corazones"></div>
+
+    <header class="encabezado-galeria">
+
+        <a href="index.html" class="volver">
+            ← Volver
+        </a>
+
+        <div class="corazon">❤️</div>
+
+        <p class="pequeno">Nuestros momentos</p>
+
+        <h1>Nuestra galería</h1>
+
+        <p class="descripcion">
+            Un lugar para guardar todas esas fotos que queremos recordar.
+        </p>
+
+        <label for="selectorFotos" class="boton-fotos">
+            📸 Agregar fotos
+        </label>
+
+        <input
+            type="file"
+            id="selectorFotos"
+            accept="image/*"
+            multiple
+            hidden
+        >
+
+    </header>
+
+
+    <main>
+
+        <section class="galeria">
+
+            <div id="listaFotos" class="lista-fotos"></div>
+
+            <div id="sinFotos" class="sin-fotos">
+                📷 Todavía no hay fotos.
+                <br>
+                Agrega nuestros primeros recuerdos ❤️
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- VISOR DE FOTO GRANDE -->
+
+    <div id="visor" class="visor">
+
+        <button id="cerrarVisor" class="cerrar">
+            ×
+        </button>
+
+        <img id="imagenGrande" src="" alt="Foto ampliada">
+
+    </div>
+
+
+    <script src="galeria.js"></script>
+</body>
+</html>

@@ -1,0 +1,1207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff8fa;
+    color: #4a3038;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffe1e9 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #ffd9e3 0%, transparent 30%),
+        #fff8fa;
+}
+
+.contenido-portada {
+    max-width: 850px;
+    z-index: 2;
+}
+
+.corazon-principal {
+    font-size: 80px;
+
+    animation: latido 1.5s infinite ease-in-out;
+
+    margin-bottom: 20px;
+}
+
+.pequeno {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #b56b7b;
+
+    margin-bottom: 15px;
+}
+
+.portada h1 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(60px, 10vw, 110px);
+
+    color: #9e4058;
+
+    line-height: 1;
+}
+
+.frase-portada {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 28px;
+
+    line-height: 1.5;
+
+    margin-top: 25px;
+
+    color: #79505b;
+}
+
+.portada button {
+    margin-top: 40px;
+    border: none;
+    background: #b84d69;
+    color: white;
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(184, 77, 105, 0.25);
+}
+
+.portada button:hover {
+    transform: translateY(-4px);
+    background: #9f3d57;
+    box-shadow: 0 15px 35px rgba(184, 77, 105, 0.35);
+}
+
+
+.flecha {
+    position: absolute;
+
+    bottom: 25px;
+
+    font-size: 30px;
+
+    animation: bajar 1.5s infinite;
+}
+
+
+/* =========================
+   TITULOS
+========================= */
+
+.titulo-seccion {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.titulo-seccion span {
+    font-size: 40px;
+}
+
+.titulo-seccion h2 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 55px;
+
+    color: #9e4058;
+
+    margin: 10px 0;
+}
+
+.titulo-seccion p {
+    color: #876b73;
+}
+
+
+/* =========================
+   CREAR NOTA
+========================= */
+
+.crear {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 100px 25px 70px;
+}
+
+.formulario {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 50px rgba(100, 30, 50, 0.08);
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+
+    border: 2px solid #f3dce2;
+
+    background: #fffafb;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    margin-bottom: 15px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: #c76b82;
+
+    background: white;
+}
+
+.formulario textarea {
+    height: 180px;
+
+    resize: vertical;
+}
+
+.formulario button {
+    margin-top: 5px;
+
+    width: 100%;
+}
+
+
+/* =========================
+   RECUERDOS
+========================= */
+
+.recuerdos {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 70px 25px 110px;
+}
+
+
+/* =========================
+   TARJETA DE NOTA
+========================= */
+
+.nota {
+    display: grid;
+    grid-template-columns: 350px minmax(0, 1fr);
+    min-height: 300px;
+    height: auto;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 35px;
+    box-shadow: 0 15px 50px rgba(100, 30, 50, 0.08);
+    transition: 0.4s;
+    animation: aparecer 0.5s ease;
+}           
+
+.nota:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 25px 60px rgba(100, 30, 50, 0.13);
+}
+
+
+/* Imagen */
+
+.parte-foto {
+    overflow: hidden;
+}
+
+.parte-foto img {
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 300px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Contenido */
+
+.parte-nota {
+    padding: 40px;
+    position: relative;
+    min-width: 0;
+    overflow: visible;
+}
+
+.numero {
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #c27a8b;
+}
+
+.parte-nota h3 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 40px;
+
+    color: #a0445d;
+
+    margin: 10px 0 20px;
+}
+
+.texto-nota {
+    font-family: "Dancing Script", cursive;
+    font-size: 27px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    color: #594047;
+}
+
+.fecha {
+    margin-top: 25px;
+
+    color: #a36a78;
+
+    font-size: 14px;
+}
+
+
+/* Botón eliminar */
+
+.eliminar {
+    position: absolute;
+
+    top: 20px;
+
+    right: 20px;
+
+    border: none;
+
+    background: #fff0f3;
+
+    color: #b84d69;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.eliminar:hover {
+    background: #b84d69;
+
+    color: white;
+
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   SIN NOTAS
+========================= */
+
+.sin-notas {
+    text-align: center;
+
+    padding: 50px;
+
+    color: #a47782;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 28px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    min-height: 60vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 25px;
+
+    background: #ffe9ee;
+}
+
+.final-corazon {
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    animation: latido 1.5s infinite;
+}
+
+.final h2 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 60px;
+
+    color: #9e4058;
+}
+
+.final p {
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    line-height: 1.7;
+
+    color: #75535d;
+}
+
+.firma {
+    margin-top: 40px;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 27px;
+
+    color: #9e4058;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    background: #9e4058;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+.hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+
+    bottom: -30px;
+
+    animation: subir 6s linear forwards;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes bajar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes subir {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 750px) {
+
+    .portada {
+        padding: 20px;
+    }
+
+    .corazon-principal {
+        font-size: 60px;
+    }
+
+    .frase-portada {
+        font-size: 22px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 42px;
+    }
+
+    .formulario {
+        padding: 25px;
+    }
+
+    .nota {
+        grid-template-columns: 1fr;
+    }
+
+    .parte-foto img {
+        height: 280px;
+
+        min-height: 280px;
+    }
+
+    .parte-nota {
+        padding: 30px 25px;
+    }
+
+    .parte-nota h3 {
+        font-size: 35px;
+    }
+
+    .texto-nota {
+        font-size: 24px;
+    }
+
+    .final h2 {
+        font-size: 45px;
+    }
+}
+
+/* =========================================
+   BOTÓN ESCRIBIR CARTA
+========================================= */
+
+.boton-carta {
+
+    margin-top: 30px;
+
+    border: none;
+
+    padding: 17px 35px;
+
+    border-radius: 50px;
+
+    background: #b84d69;
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(184, 77, 105, 0.25);
+
+    transition: 0.3s;
+}
+
+
+.boton-carta:hover {
+
+    transform: translateY(-4px);
+
+    background: #9f3d57;
+
+    box-shadow:
+        0 15px 35px rgba(184, 77, 105, 0.35);
+}
+
+
+/* =========================================
+   FONDO DE LA VENTANA
+========================================= */
+
+.fondo-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(50, 20, 30, 0.55);
+
+    backdrop-filter: blur(7px);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+
+/* Cuando se abre */
+
+.fondo-modal.mostrar {
+
+    display: flex;
+
+    animation: aparecerFondo 0.3s ease;
+}
+
+
+/* =========================================
+   CARTA
+========================================= */
+
+.carta {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 45px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.96),
+            rgba(255,248,244,0.98)
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.3);
+
+    transform: scale(0.7) translateY(40px);
+
+    opacity: 0;
+
+    animation: abrirCarta 0.5s forwards;
+
+    border: 1px solid #f2d8dd;
+}
+
+
+/* =========================================
+   DECORACIÓN DE LA CARTA
+========================================= */
+
+.carta::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    right: 15px;
+
+    bottom: 15px;
+
+    border: 1px solid #edcbd2;
+
+    pointer-events: none;
+}
+
+
+.sello {
+
+    position: relative;
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+    background: #ffe5eb;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 5px 15px rgba(184, 77, 105, 0.15);
+}
+
+
+.carta h2 {
+
+    position: relative;
+
+    text-align: center;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 48px;
+
+    color: #9e4058;
+
+    margin-bottom: 5px;
+}
+
+
+.subtitulo-carta {
+
+    position: relative;
+
+    text-align: center;
+
+    color: #9b747e;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.carta input,
+.carta textarea {
+
+    position: relative;
+
+    width: 100%;
+
+    border: none;
+
+    border-bottom: 2px solid #efd6dc;
+
+    background: transparent;
+
+    padding: 14px 5px;
+
+    margin-bottom: 20px;
+
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    color: #513841;
+
+    transition: 0.3s;
+}
+
+
+.carta input:focus,
+.carta textarea:focus {
+
+    border-bottom-color: #b84d69;
+}
+
+
+.carta textarea {
+
+    height: 220px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+
+.carta textarea::placeholder,
+.carta input::placeholder {
+
+    color: #b99ba3;
+}
+
+
+/* =========================================
+   BOTÓN GUARDAR
+========================================= */
+
+.guardar-carta {
+
+    position: relative;
+
+    width: 100%;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 50px;
+
+    background: #b84d69;
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.guardar-carta:hover {
+
+    background: #9f3d57;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CERRAR
+========================================= */
+
+.cerrar-carta {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    z-index: 5;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 32px;
+
+    color: #a76a78;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.cerrar-carta:hover {
+
+    color: #8f344e;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes aparecerFondo {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+}
+
+
+@keyframes abrirCarta {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.7)
+            translateY(40px)
+            rotateX(15deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0)
+            rotateX(0);
+
+    }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .carta {
+
+        padding: 35px 25px;
+
+        max-height: 92vh;
+    }
+
+
+    .carta h2 {
+
+        font-size: 40px;
+    }
+
+
+    .carta textarea {
+
+        height: 180px;
+    }
+
+}
+
+/* =========================================
+   GALERÍA DE FOTOS
+========================================= */
+
+.galeria {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 25px 110px;
+}
+
+
+/* BOTÓN AGREGAR FOTOS */
+
+.boton-fotos {
+    margin-top: 25px;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 50px;
+    background: #b84d69;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(184, 77, 105, 0.25);
+}
+
+.boton-fotos:hover {
+    transform: translateY(-4px);
+    background: #9f3d57;
+    box-shadow: 0 15px 35px rgba(184, 77, 105, 0.35);
+}
+
+
+/* CONTENEDOR DE FOTOS */
+
+.lista-fotos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+
+/* TARJETA DE FOTO */
+
+.foto-item {
+    position: relative;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 15px 40px rgba(100, 30, 50, 0.12);
+    cursor: pointer;
+    animation: aparecer 0.5s ease;
+}
+
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s;
+}
+
+.foto-item:hover img {
+    transform: scale(1.06);
+}
+
+
+/* BOTÓN ELIMINAR FOTO */
+
+.eliminar-foto {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: #b84d69;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.eliminar-foto:hover {
+    background: #b84d69;
+    color: white;
+    transform: scale(1.1);
+}
+
+
+/* MENSAJE CUANDO NO HAY FOTOS */
+
+.sin-fotos {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+    color: #a47782;
+    font-family: "Dancing Script", cursive;
+    font-size: 28px;
+}
+
+
+/* =========================================
+   VISOR DE FOTO GRANDE
+========================================= */
+
+.visor-foto {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 10, 20, 0.88);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    z-index: 2000;
+}
+
+.visor-foto.mostrar {
+    display: flex;
+    animation: aparecerFondo 0.3s ease;
+}
+
+.visor-foto img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+    animation: abrirCarta 0.35s ease forwards;
+}
+
+
+/* CERRAR VISOR */
+
+.cerrar-foto {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.cerrar-foto:hover {
+    transform: rotate(90deg);
+    color: #ffc1cf;
+}
+
+
+/* =========================================
+   GALERÍA EN CELULAR
+========================================= */
+
+@media (max-width: 750px) {
+
+    .lista-fotos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .foto-item {
+        height: 220px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .lista-fotos {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-item {
+        height: 300px;
+    }
+
+    .visor-foto {
+        padding: 15px;
+    }
+
+    .visor-foto img {
+        max-width: 95%;
+    }
+
+    .cerrar-foto {
+        top: 10px;
+        right: 20px;
+    }
+}
+
+.boton-galeria {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: #b84d69;
+    color: white;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(184, 77, 105, 0.25);
+}
+
+.boton-galeria:hover {
+    transform: translateY(-4px);
+    background: #9f3d57;
+}

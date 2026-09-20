@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis recuerdos ❤️</title>
+
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis recuerdos ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CORAZONES -->
+
+    <div class="hearts"></div>
+
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <section class="portada">
+
+        <div class="contenido-portada">
+
+            <div class="corazon-principal">
+                ❤️
+            </div>
+
+            <p class="pequeno">
+                Un pequeño lugar para guardar nuestros recuerdos
+            </p>
+
+            <h1>
+                Mis notitas favoritas
+            </h1>
+
+            <p class="frase-portada">
+                Cada palabra bonita merece quedarse para siempre.
+            </p>
+
+            <button onclick="irANotas()">
+                Ver mis recuerdos 💌
+            </button>
+
+        </div>
+
+        <div class="flecha">
+            ↓
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CREAR NOTA
+    ========================== -->
+
+    <section class="crear">
+
+        <div class="titulo-seccion">
+
+            <span>💌</span>
+
+            <h2>
+                Un recuerdo nuevo
+            </h2>
+
+            <p>
+                Guarda aquí esas palabras que quieres conservar.
+            </p>
+
+            <button
+                class="boton-carta"
+                onclick="abrirCarta()"
+            >
+                ✍️ Escribir una notita
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     GALERÍA DE FOTOS
+========================= -->
+
+<section class="galeria" id="galeria">
+
+
+
+    <a href="galeria.html" class="boton-galeria">
+    📸 Nuestra galería
+</a>
+
+    <div class="titulo-seccion">
+        <span>📸</span>
+        <h2>Nuestra galería</h2>
+        <p>Un lugar para guardar nuestras fotos favoritas.</p>
+
+        <button class="boton-fotos" onclick="abrirSelectorFotos()">
+            📷 Agregar fotos
+        </button>
+
+        <input
+            type="file"
+            id="selectorFotos"
+            accept="image/*"
+            multiple
+            hidden
+            onchange="agregarFotos(event)"
+        >
+    </div>
+
+    <div id="listaFotos" class="lista-fotos"></div>
+
+</section>
+
+
+<!-- VISOR DE FOTO GRANDE -->
+
+<div id="visorFoto" class="visor-foto" onclick="cerrarFotoGrande()">
+
+    <button class="cerrar-foto" onclick="cerrarFotoGrande(event)">
+        ×
+    </button>
+
+    <img id="fotoGrande" src="" alt="Foto">
+
+</div>
+
+
+    <!-- =========================
+         CARTA EMERGENTE
+    ========================== -->
+
+    <div
+        id="ventanaCarta"
+        class="fondo-modal"
+    >
+
+        <div class="carta">
+
+
+            <!-- CERRAR -->
+
+            <button
+                class="cerrar-carta"
+                onclick="cerrarCarta()"
+            >
+                ×
+            </button>
+
+
+            <!-- SELLO -->
+
+            <div class="sello">
+                ❤️
+            </div>
+
+
+            <h2>
+                Una pequeña carta
+            </h2>
+
+
+            <p class="subtitulo-carta">
+                Escribe aquí todo lo que quieras guardar...
+            </p>
+
+
+            <!-- TÍTULO -->
+
+            <input
+                type="text"
+                id="tituloNota"
+                placeholder="Ponle un título..."
+            >
+
+
+            <!-- TEXTO -->
+
+            <textarea
+                id="textoNota"
+                placeholder="Escribe aquí tu recuerdo, una frase, una nota bonita..."
+            ></textarea>
+
+
+            <!-- AUTOR -->
+
+            <input
+                type="text"
+                id="autorNota"
+                placeholder="¿Quién escribió esto?"
+            >
+
+
+            <!-- GUARDAR -->
+
+            <button
+                class="guardar-carta"
+                onclick="guardarNota()"
+            >
+                Guardar recuerdo ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         RECUERDOS
+    ========================== -->
+
+    <section
+        id="recuerdos"
+        class="recuerdos"
+    >
+
+        <div class="titulo-seccion">
+
+            <span>💌</span>
+
+            <h2>
+                Nuestros recuerdos
+            </h2>
+
+            <p>
+                Todas las palabras que decidiste guardar.
+            </p>
+
+        </div>
+
+
+        <div id="listaNotas">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL
+    ========================== -->
+
+    <section class="final">
+
+        <div class="final-corazon">
+            ❤️
+        </div>
+
+        <h2>
+            Para guardar cada pequeño recuerdo
+        </h2>
+
+        <p>
+            Porque algunas palabras son demasiado bonitas
+            para simplemente dejarlas pasar.
+        </p>
+
+        <div class="firma">
+            Hecho con amor ❤️
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        Un pequeño rincón para nosotros ❤️
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

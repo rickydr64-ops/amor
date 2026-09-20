@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff8fa;
+    color: #4a3038;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado-galeria {
+    text-align: center;
+    padding: 70px 25px 50px;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ffe1e9 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            #ffd9e3 0%,
+            transparent 30%
+        ),
+        #fff8fa;
+}
+
+.corazon {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.pequeno {
+    color: #b56b7b;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.encabezado-galeria h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(55px, 9vw, 90px);
+    color: #9e4058;
+    margin: 10px 0;
+}
+
+.descripcion {
+    color: #79505b;
+    font-size: 16px;
+    margin: 10px auto 25px;
+    max-width: 600px;
+}
+
+
+/* =========================
+   VOLVER
+========================= */
+
+.volver {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+    text-decoration: none;
+    color: #9e4058;
+
+    background: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+
+    box-shadow: 0 8px 25px rgba(100, 30, 50, 0.08);
+
+    transition: 0.3s;
+}
+
+.volver:hover {
+    transform: translateX(-4px);
+}
+
+
+/* =========================
+   BOTÓN FOTOS
+========================= */
+
+.boton-fotos {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: #b84d69;
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(184, 77, 105, 0.25);
+
+    transition: 0.3s;
+}
+
+.boton-fotos:hover {
+    transform: translateY(-4px);
+    background: #9f3d57;
+}
+
+
+/* =========================
+   GALERÍA
+========================= */
+
+.galeria {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 25px 100px;
+}
+
+.lista-fotos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* FOTO */
+
+.foto {
+    position: relative;
+
+    height: 330px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background: white;
+
+    box-shadow: 0 15px 45px rgba(100, 30, 50, 0.12);
+
+    animation: aparecer 0.5s ease;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    cursor: pointer;
+
+    transition: transform 0.5s;
+}
+
+.foto:hover img {
+    transform: scale(1.06);
+}
+
+
+/* BOTÓN ELIMINAR */
+
+.eliminar {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.95);
+
+    color: #b84d69;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    transition: 0.3s;
+}
+
+.eliminar:hover {
+    background: #b84d69;
+    color: white;
+}
+
+
+/* SIN FOTOS */
+
+.sin-fotos {
+    text-align: center;
+
+    padding: 80px 20px;
+
+    color: #a47782;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   VISOR
+========================= */
+
+.visor {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(30, 10, 20, 0.9);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    z-index: 1000;
+}
+
+.visor.mostrar {
+    display: flex;
+}
+
+.visor img {
+    max-width: 90%;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+.cerrar {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 45px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 750px) {
+
+    .lista-fotos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .foto {
+        height: 240px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .lista-fotos {
+        grid-template-columns: 1fr;
+    }
+
+    .foto {
+        height: 300px;
+    }
+
+    .volver {
+        position: static;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+
+}
