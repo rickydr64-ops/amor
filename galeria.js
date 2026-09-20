@@ -1,35 +1,4 @@
-let fotos = JSON.parse(
-    localStorage.getItem("misFotos")
-) || [];
-
-const selectorFotos =
-    document.getElementById("selectorFotos");
-
-const listaFotos =
-    document.getElementById("listaFotos");
-
-const sinFotos =
-    document.getElementById("sinFotos");
-
-const visor =
-    document.getElementById("visor");
-
-const imagenGrande =
-    document.getElementById("imagenGrande");
-
-const cerrarVisor =
-    document.getElementById("cerrarVisor");
-
-
-/* =========================
-   MOSTRAR FOTOS
-========================= */
-
-function mostrarFotos() {
-
-    listaFotos.innerHTML = "";
-
-    if (fotos.length === 0) {
+v
 
         sinFotos.style.display = "block";
 
